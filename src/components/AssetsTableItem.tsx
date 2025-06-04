@@ -1,10 +1,10 @@
-import type { Asset } from "../utils/interface";
+import type { TokenInfo } from "../utils/interface";
 
 interface AssetsTableItemProps {
-  assets: Asset[];
+  tokenInfo: TokenInfo[];
 }
 
-const AssetsTableItem = ({ assets }: AssetsTableItemProps) => {
+const AssetsTableItem = ({ tokenInfo }: AssetsTableItemProps) => {
   return (
     <table className="w-full text-left p-5">
       <thead className="bg-gray-200">
@@ -15,13 +15,13 @@ const AssetsTableItem = ({ assets }: AssetsTableItemProps) => {
         </tr>
       </thead>
       <tbody>
-        {assets.map((asset) => (
-          <tr key={asset.id}>
-            <td className="px-4 py-4 w-36">{asset.name}</td>
-            <td className="px-4 py-4 w-36">{asset.symbol}</td>
-            <td className="px-4 py-4 w-36">
+        {tokenInfo.map((asset) => (
+          <tr key={asset.TOKEN_ID}>
+            <td className="px-4 py-4 w-36">{asset.TOKEN_NAME}</td>
+            <td className="px-4 py-4 w-36">{asset.TOKEN_SYMBOL}</td>
+            {/* <td className="px-4 py-4 w-36">
               ${asset.marketData.priceUsd.toFixed(2)}
-            </td>
+            </td> */}
           </tr>
         ))}
       </tbody>
