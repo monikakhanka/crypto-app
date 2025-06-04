@@ -2,17 +2,16 @@ import axios from "axios";
 import AssetsTableItem from "../components/AssetsTableItem";
 import { useQuery } from "@tanstack/react-query";
 
+const API_URL = import.meta.env.VITE_API_URL;
+const API_KEY = import.meta.env.VITE_API_KEY;
+
 const Home = () => {
   const fetchAssets = async () => {
-    const response = await axios.get(
-      "https://api.tokenmetrics.com/v2/tokens?limit=50&page=1",
-      {
-        headers: {
-          "x-api-key":
-            "tm-9bd6c685-7a25-4efc-b026-508ab00afed2",
-        },
-      }
-    );
+    const response = await axios.get(API_URL, {
+      headers: {
+        "x-api-key": API_KEY,
+      },
+    });
     return response.data.data;
   };
 
@@ -33,7 +32,7 @@ const Home = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  return <AssetsTableItem assets={assets} />;
+  return <AssetsTableItem tokenInfo={assets} />;
 };
 
 export default Home;

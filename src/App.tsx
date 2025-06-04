@@ -3,38 +3,41 @@ import Login from "./pages/Login";
 import Trade from "./pages/Trade";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Header/>,
+    element: <Header />,
     children: [
-      {   
+      {
         index: true,
-        element: <Home/>
+        element: <Home />,
       },
       {
         path: "/trade",
-        element: <Trade/>
+        element: (
+          <ProtectedRoute>
+            <Trade />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/login",
-        element: <Login/>
+        element: <Login />,
       },
-    ]
-  }
-])
+    ],
+  },
+]);
 
 // const queryClient = new QueryClient();
 
-
-function App() {  
+function App() {
   return (
     <>
-          <RouterProvider router= {router}/>
-   </>
-
-  )
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;

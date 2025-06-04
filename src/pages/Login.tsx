@@ -1,11 +1,55 @@
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../hooks/reduxHooks";
+import { login } from "../store/authSlice";
+
 const Login = () => {
-    return (
-        <form action="submit" className="flex flex-col w-100 h-200 bg-amber-300">
-            <input type="text" placeholder="Enter email" className="w-xl border-2 my-5" />
-            <input type="password" placeholder="Enter password" className="w-xl border-2 my-5"/>
-            <button className="bg-blue-400 w-xl">Log in</button>
-        </form>
-    )
-}
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+
+  const handleButtonClick = () => {
+    const email = emailRef.current?.value;
+    const password = passwordRef.current?.value;
+
+    if (email && password) {
+      dispatch(login({ email }));
+      navigate("/");
+    } else {
+      navigate("/login");
+    }
+  };
+
+  return (
+    <form
+      onSubmit={(e) => e.preventDefault()}
+      className="bg-blue-500 absolute w-full md:w-3/12 md:mx-auto right-0 left-0 mt-[55%] md:mt-24 h-[400px] rounded-lg"
+    >
+      <h1 className="font-bold text-left text-white text-3xl mt-9 mb-7 flex justify-center">
+        Log in
+      </h1>
+      <input
+        ref={emailRef}
+        type="text"
+        placeholder="Email Address"
+        className="p-4 mx-4 my-4 w-11/12 h-12 bg-slate-500 bg-opacity-50 border border-white rounded-lg text-white"
+      />
+
+      <input
+        ref={passwordRef}
+        type="password"
+        placeholder="Password"
+        className="p-4 mx-4 my-4 w-11/12 h-12  bg-slate-500 bg-opacity-50 border border-white rounded-lg text-white"
+      />
+      <button
+        className="px-2 mx-4 my-4 mb-5 w-11/12 h-12 bg-blue-900 text-white rounded-lg"
+        onClick={handleButtonClick}
+      >
+        Log in
+      </button>
+    </form>
+  );
+};
 
 export default Login;
