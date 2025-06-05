@@ -9,10 +9,11 @@ const Home = () => {
   const fetchAssets = async () => {
     const response = await axios.get(API_URL, {
       headers: {
-        "x-api-key": API_KEY,
+        "x-cg-demo-api-key": API_KEY,
       },
     });
-    return response.data.data;
+    console.log(response.data);
+    return response.data;
   };
 
   const {

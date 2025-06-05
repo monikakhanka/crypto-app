@@ -15,7 +15,7 @@ const Login = () => {
 
     if (email && password) {
       dispatch(login({ email }));
-      navigate("/");
+      navigate("/trade");
     } else {
       navigate("/login");
     }
@@ -33,17 +33,17 @@ const Login = () => {
         ref={emailRef}
         type="text"
         placeholder="Email Address"
-        className="p-4 mx-4 my-4 w-11/12 h-12 bg-slate-500 bg-opacity-50 border border-white rounded-lg text-white"
+        className="p-4 mx-4 my-4 w-11/12 h-12 bg-blue-200 border border-white rounded-lg text-white placeholder-gray-500"
       />
 
       <input
         ref={passwordRef}
         type="password"
         placeholder="Password"
-        className="p-4 mx-4 my-4 w-11/12 h-12  bg-slate-500 bg-opacity-50 border border-white rounded-lg text-white"
+        className="p-4 mx-4 my-4 w-11/12 h-12 bg-blue-200  border border-white rounded-lg text-white placeholder-gray-500"
       />
       <button
-        className="px-2 mx-4 my-4 mb-5 w-11/12 h-12 bg-blue-900 text-white rounded-lg"
+        className="px-2 mx-4 my-4 mb-5 w-11/12 h-12 bg-blue-400 text-white rounded-lg text-2xl"
         onClick={handleButtonClick}
       >
         Log in
