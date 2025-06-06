@@ -67,7 +67,7 @@ const AssetsTableItem = ({ tokenInfo }: AssetsTableItemProps) => {
           {sortedData.map(({ id, name, symbol, image, current_price }) => (
             <tr key={id} className="text-2xl">
               <td className="px-4 py-4 w-20">
-                <img src={image} alt="coin image" className="w-10 h-10" />
+                <img src={image} alt="coin image" className="w-9 h-9" />
               </td>
               <td className="px-4 py-4 w-36">{name + " (" + symbol + ")"}</td>
               <td className="px-4 py-4 w-36">${current_price}</td>

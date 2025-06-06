@@ -24,14 +24,14 @@ const Login = () => {
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
-      className="bg-blue-500 absolute w-full md:w-3/12 md:mx-auto right-0 left-0 mt-[55%] md:mt-24 h-[400px] rounded-lg"
+      className="bg-blue-500 absolute top-24 w-full md:w-3/12 md:mx-auto right-0 left-0 md:mt-24 h-[400px] rounded-lg"
     >
       <h1 className="font-bold text-left text-white text-3xl mt-9 mb-7 flex justify-center">
         Log in
       </h1>
       <input
         ref={emailRef}
-        type="text"
+        type="email"
         placeholder="Email Address"
         className="p-4 mx-4 my-4 w-11/12 h-12 bg-blue-200 border border-white rounded-lg text-white placeholder-gray-500"
       />
