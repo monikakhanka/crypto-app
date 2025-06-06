@@ -2,10 +2,10 @@
 
 ## Create .env file by copying the .env.example file and replacing the VITE_API_KEY with your own demo key:
 
-VITE_API_URL=https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=2
-VITE_API_KEY=<your_demo_api_key>
-VITE_API_URL_TOKENS=https://api.coingecko.com/api/v3/simple/supported_vs_currencies
-VITE_API_URL_USD_CALC=https://api.coingecko.com/api/v3/simple/price?symbols=
+- VITE_API_URL=https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=2
+- VITE_API_KEY=<your_demo_api_key>
+- VITE_API_URL_TOKENS=https://api.coingecko.com/api/v3/simple/supported_vs_currencies
+- VITE_API_URL_USD_CALC=https://api.coingecko.com/api/v3/simple/price?symbols=
 
 ## To use trade page and to login:
 

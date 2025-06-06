@@ -1,3 +1,7 @@
+export interface AssetsTableItemProps {
+  tokenInfo: TokenInfo[];
+}
+
 export interface TokenInfo {
   id: string;
   symbol: string;

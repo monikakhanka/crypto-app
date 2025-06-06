@@ -2,7 +2,7 @@ import axios from "axios";
 import AssetsTableItem from "../components/AssetsTableItem";
 import { useQuery } from "@tanstack/react-query";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_FETCH_ASSETS_URL;
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 const Home = () => {
